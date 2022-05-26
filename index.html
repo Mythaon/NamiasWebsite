@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="stylesheet.css">
   </head>
   <style>
+    //this is all stuff used to build the website's slideshow and to que the colors of the website
     body {
       font-family: sans-serif;
             color: rgb(217, 26, 26);
@@ -18,21 +19,21 @@
                 width:50px;
                 height:50px;
                 border-radius:100%;
-                border:5px solid rgb(74, 162, 230);
-                background-color:rgb(123, 196, 235);
+                border:5px solid rgb(230, 76, 94);
+                background-color:rgb(235, 124, 124);
                 font-size:20px;
                 color:#fff;
                 margin-top:12px;
             }
             button:hover{
-                background-color:rgb(165, 222, 250);
+                background-color:rgb(250, 165, 179);
             }
             
             #button-bar{
                 width:300px;
                 height:75px;
-                border:5px solid rgb(74, 162, 230);
-                background-color:rgb(123, 196, 235);
+                border:5px solid rgb(230, 76, 89);
+                background-color:rgb(235, 124, 124);
                 margin-left:auto;
                 margin-right:auto;
                 border-radius:50px;
@@ -52,7 +53,7 @@
                 padding:10px;
                 margin-left:auto;
                 margin-right:auto;
-                background-color:rgb(74, 162, 230);
+                background-color:rgb(230, 76, 83);
                 margin-bottom: 15px;
             }
             img{
@@ -68,7 +69,7 @@
     
   </style>
   
-  
+  //This is where both the titles can be found.
   <body>
     <h1>Namias Search</h1>
         <p>We at the Namias Search are to inform those about galactic politics and events of tomorrow</p>
@@ -87,8 +88,12 @@
       <p>Atlantis currently locates itself in the mid-Atlantic gap, the empire at large spanded 50,000 square miles of continent before sinking, the Atlanteans were powerful in terms of technology, but egoism played a critical role in their downfall.</p>
       <img src=atlantis_small.jpg
            alt="Image of the city of Atlantis."/>
+      //This is all suppose to show pictures and annotations below them, this is all a list too.
       
-      <h3>Mushrooms from another planet, planet "KASO"</h3>
+      
+      
+      //Here is the slideshow area, all of the coding below is used to showcase the slideshow about certain foods from different but yet similar planets to ours (Keep in mind that this is all fiction)
+      <h3>Foods from another planet similar to our beloved Earth, planet "KASO"</h3>
       <br>
     <div id="container">
         <img id="displayed" src="https://www.kasandbox.org/programming-images/food/berries.png" alt="Mushrooms">
@@ -100,9 +105,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
     var srclist = [
-        'https://www.kasandbox.org/programming-images/food/mushroom.png',
-        'https://www.kasandbox.org/programming-images/food/tomatoes.png',
-        'https://www.kasandbox.org/programming-images/food/berries.png'
+        'berries.png',
+        'tomatoes.png',
+        'mushroom.png'
         ];
     var index = 0;
     $('#displayed').attr('src',srclist[index]);
