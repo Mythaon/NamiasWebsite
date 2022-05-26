@@ -2,6 +2,7 @@
 <html>        
   <head>
     <img src=184-1841623_eagle-logo-png-transparent-png.png/>
+    <title>Welcome to Namias Search</title>
     <link rel="stylesheet" href="stylesheet.css">
   </head>
   <style>
@@ -13,6 +14,57 @@
       font-family: sans-serif;
       color: rgb(0, 255, 4);
     }
+    button{
+                width:50px;
+                height:50px;
+                border-radius:100%;
+                border:5px solid rgb(74, 162, 230);
+                background-color:rgb(123, 196, 235);
+                font-size:20px;
+                color:#fff;
+                margin-top:12px;
+            }
+            button:hover{
+                background-color:rgb(165, 222, 250);
+            }
+            
+            #button-bar{
+                width:300px;
+                height:75px;
+                border:5px solid rgb(74, 162, 230);
+                background-color:rgb(123, 196, 235);
+                margin-left:auto;
+                margin-right:auto;
+                border-radius:50px;
+            }
+            #right{
+                float:right;
+                margin-right:15px;
+            }
+            
+            #left{
+                float:left;
+                margin-left:15px;
+            }
+            #container{
+                width:450px;
+                height:275px;
+                padding:10px;
+                margin-left:auto;
+                margin-right:auto;
+                background-color:rgb(74, 162, 230);
+                margin-bottom: 15px;
+            }
+            img{
+                height:275px;
+                margin-left:auto;
+                margin-right:auto;
+                display:block;
+            }
+            
+            .hide{
+                display:none;
+            }
     
   </style>
   
@@ -36,6 +88,61 @@
       <img src=atlantis_small.jpg
            alt="Image of the city of Atlantis."/>
       
+      <h3>Mushrooms from another planet, planet "KASO"</h3>
+      <br>
+    <div id="container">
+        <img id="displayed" src="https://www.kasandbox.org/programming-images/food/berries.png" alt="Mushrooms">
+    </div>
+    <div id="button-bar">
+        <button type="button" id="left">◄</button>
+        <button type="button" id="right">►</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    var srclist = [
+        'https://www.kasandbox.org/programming-images/food/mushroom.png',
+        'https://www.kasandbox.org/programming-images/food/tomatoes.png',
+        'https://www.kasandbox.org/programming-images/food/berries.png'
+        ];
+    var index = 0;
+    $('#displayed').attr('src',srclist[index]);
+    
+    var checkIndx = function(){
+        if(index===srclist.length-1){
+            $('#right').addClass('hide');
+        }else if(index===0){
+            $('#left').addClass('hide');
+        }else{
+            $('button').removeClass('hide');
+        }
+    }
+    
+    checkIndx();
+    
+    $('#left').click(function(event){
+        index--;
+        $('#displayed').show()
+                       .fadeOut(500,function(){
+                        $(this).attr('src',srclist[index])
+                               .hide()
+                               .fadeIn(500);
+                       })
+        checkIndx();
+    });
+    
+    $('#right').click(function(event){
+        index++;
+        $('#displayed').show()
+                       .fadeOut(500,function(){
+                        $(this).attr('src',srclist[index])
+                               .hide()
+                               .fadeIn(500);
+                       })
+                       
+        checkIndx();
+    });
+    
+    </script> 
       
     </ul>
     
